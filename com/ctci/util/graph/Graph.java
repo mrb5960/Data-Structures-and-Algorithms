@@ -89,7 +89,7 @@ public class Graph {
 			Vertex current = toVisit.remove();
 			if(current == dest)
 				return true;
-			if(visited.contains(current))
+			if(visited.contains(current.id))
 				continue;
 			visited.add(current.id);
 			for(Vertex child : current.adjacent)
