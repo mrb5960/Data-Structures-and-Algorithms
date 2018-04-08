@@ -59,6 +59,10 @@ public class SinglyLinkedList<T> {
 		return this.head;
 	}
 	
+	public void setHeadPtr(Node<T> head){
+		this.head = head;
+	}
+	
 	public Node<T> getTailPtr(){
 		return this.tail;
 	}
