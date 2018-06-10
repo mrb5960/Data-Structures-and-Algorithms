@@ -5,6 +5,13 @@ import java.util.HashSet;
 
 public class PowerSet {
 	
+	/*
+	 * Time and space complexity is O(n * 2 ^ n)
+	 * as powerset contains 2^n sets with n elements
+	 * The recursion tree grows n times and every time 2^n elements are traversed
+	 * to generate new sets.
+	 */
+	
 	void getPowerSet(ArrayList<Integer> input){
 		HashSet<HashSet<Integer>> powerset = getPowerSetRec(input, input.size() - 1);
 		 for(HashSet<Integer> set : powerset){

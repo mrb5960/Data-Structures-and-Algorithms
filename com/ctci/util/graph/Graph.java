@@ -3,17 +3,77 @@ package com.ctci.util.graph;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 public class Graph {
 
 	private HashMap<Integer, Vertex> vertices = new HashMap<>();
+	private PriorityQueue<Edge> edges = new PriorityQueue<>();
 	
+	public PriorityQueue<Edge> getEdges() {
+		return edges;
+	}
+
+	public void setEdges(PriorityQueue<Edge> edges) {
+		this.edges = edges;
+	}
+
 	public HashMap<Integer, Vertex> getVertices() {
 		return vertices;
 	}
 
 	public void setVertices(HashMap<Integer, Vertex> vertices) {
 		this.vertices = vertices;
+	}
+	
+	public class Edge implements Comparable<Edge>{
+		int weight, source, dest;
+		
+		public int getWeight() {
+			return weight;
+		}
+
+		public void setWeight(int weight) {
+			this.weight = weight;
+		}
+
+		public int getSource() {
+			return source;
+		}
+
+		public void setSource(int source) {
+			this.source = source;
+		}
+
+		public int getDest() {
+			return dest;
+		}
+
+		public void setDest(int dest) {
+			this.dest = dest;
+		}
+
+		Edge(int w, int s, int d){
+			weight = w;
+			source = s;
+			dest = d;
+		}
+
+		// compareTo() which will order the elements for minHeap i.e. PriorityQueue edges
+		@Override
+		public int compareTo(Edge o) {
+			if(this.weight > o.weight)
+				return 1;
+			else if(this.weight < o.weight)
+				return -1;
+			else
+				return 0;
+		}
+		
+		@Override
+		public String toString(){
+			return "" + source + "--" + weight + "-->" + dest;
+		}
 	}
 
 	public class Vertex{
@@ -57,6 +117,14 @@ public class Graph {
 		Vertex source = getVertex(s);
 		Vertex dest = getVertex(d);
 		source.adjacent.add(dest);
+	}
+	
+	// for edges with weights
+	public void addEdge(int w, int s, int d){
+		Vertex source = getVertex(s);
+		Vertex dest = getVertex(d);
+		source.adjacent.add(dest);
+		edges.add(new Edge(w, s, d));
 	}
 	
 	public boolean hasPathDFS(int s, int d){

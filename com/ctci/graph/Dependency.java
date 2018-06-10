@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import com.ctci.util.graph.Graph;
 import com.ctci.util.graph.Graph.Vertex;
 
+// Topological sorting
+
 public class Dependency {
 	
 	Graph g;

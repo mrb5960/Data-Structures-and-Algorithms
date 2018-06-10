@@ -46,6 +46,30 @@ public class LongestCommonSubsequence {
 		return memo[p1][p2];
 	}
 	
+	void printLCS(String s1, String s2, int l1, int l2){
+		int[][] memo = new int[l1+1][l2+2];
+		
+		for(int i = 0; i <= l1; i++){
+			for(int j = 0; j <= l2; j++){
+				if(i == 0 || j == 0){
+					memo[i][j] = 0;
+				}
+				if(s1.charAt(i) == s2.charAt(j)){
+					memo[i][j] = 1 + memo[i-1][j-1];
+				}
+				else{
+					memo[i][j] = Math.max(memo[i-1][j], memo[i][j-1]);
+				}
+			}
+		}
+		
+		int i = l1 - 1, j = l2 - 1;
+		
+		while(i > 0 && j > 0){
+			//if(memo[i][j] == )
+		}
+	}
+	
 	// time complexity is O(s1.length() * s2.length())
 	int getLCSBottomUp(String s1, String s2){
 		int[][] memo = new int[s1.length()+1][s2.length()+1];

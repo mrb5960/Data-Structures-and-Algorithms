@@ -133,17 +133,23 @@ public class SumLists {
 		return sum;
 	}
 	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		// numbers and the result are in reverse order
 		SinglyLinkedList<Integer> list1 = new SinglyLinkedList<>();
 		SinglyLinkedList<Integer> list2 = new SinglyLinkedList<>();
-		list1.add(7);
+		/*list1.add(7);
 		list1.add(1);
 		list1.add(6);
 		list2.add(5);
 		list2.add(9);
 		list2.add(2);
-		list2.add(1);
+		list2.add(1);*/
+		list1.add(5);
+		list2.add(5);
 		
 		SinglyLinkedList<Integer> list3 = new SinglyLinkedList<>();
 		SinglyLinkedList<Integer> list4 = new SinglyLinkedList<>();

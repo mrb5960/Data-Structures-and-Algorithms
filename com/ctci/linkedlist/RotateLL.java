@@ -37,10 +37,9 @@ public class RotateLL {
 		SinglyLinkedList<Integer> sll = csl.getSample();
 		
 		RotateLL rll = new RotateLL();
-		sll = rll.rotate(sll, 10);
+		sll = rll.rotate(sll, 3);
 		
 		System.out.println("After rotation.......");
 		sll.printAll();
 	}
-
 }

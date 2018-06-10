@@ -5,6 +5,16 @@ public class Node<T> implements Comparable<T>{
 	private T data;
 	private Node<T> next;
 	
+	public Node(T data) {
+		// TODO Auto-generated constructor stub
+		this.data = data;
+	}
+	
+	public Node() {
+		// TODO Auto-generated constructor stub
+		//this.data = data;
+	}
+
 	public void setData(T val){
 		this.data = val;
 	}
